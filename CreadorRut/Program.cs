@@ -21,7 +21,7 @@ namespace CreadorRut
                 int sumaPonderada;
                 float sumaParcialModulo;
                 int sumaParcialModulo2;
-                
+
 
 
 
@@ -57,11 +57,11 @@ namespace CreadorRut
                 arrayPonderado[4] +
                 arrayPonderado[3] +
                 arrayPonderado[2] +
-                (arrayRutSinDigito[1] * 2); 
-              //  (arrayRutSinDigito[0] * 3);
+                (arrayRutSinDigito[1] * 2);
+              //  (arrayRutSinDigito[0] * 3);     (Con esto descomentado no funca)
 
 
-                sumaParcialModulo = sumaPonderada / 11; 
+                sumaParcialModulo = sumaPonderada / 11;
 
                 int sumaParcialModuloTuncado = (int)Decimal.Truncate((decimal)sumaParcialModulo); //Se le quita parte decimal a SumaParcialModulo
 
@@ -77,7 +77,7 @@ namespace CreadorRut
 
 
                 Console.WriteLine(
-                     // arrayRutSinDigito[0] +          //Impresión final de RUT
+                     // arrayRutSinDigito[0] +          //Impresión final de RUT  (con esta linea descomentada no anda)
                       arrayRutSinDigito[1] + "." +
                       arrayRutSinDigito[2] +
                       arrayRutSinDigito[3] +
@@ -90,7 +90,7 @@ namespace CreadorRut
 
 
 
-            }//este es el del for           
+            }//este es el del for
         }
 
     }
