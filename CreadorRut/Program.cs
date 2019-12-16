@@ -11,7 +11,7 @@ namespace CreadorRut
         static void Main()
 
         {
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 20; i++) {          //Que se generen 20 RUTs
 
                 int delay = 30;
 
@@ -29,7 +29,7 @@ namespace CreadorRut
 
 
                 arrayRutSinDigito[0] = rnd.Next(0, 9); //Se asigna array a rut
-                Thread.Sleep(delay);                    // Delay para asegurar aleatorieidad
+                Thread.Sleep(delay);                   //Delay para asegurar aleatorieidad
                 arrayRutSinDigito[1] = rnd.Next(1, 9);
                 Thread.Sleep(delay);
                 arrayRutSinDigito[2] = rnd.Next(0, 9);
@@ -50,15 +50,15 @@ namespace CreadorRut
                 { arrayPonderado[i] = arrayRutSinDigito[i] * (9 - i); }
 
 
-                sumaPonderada=
+                sumaPonderada =
                 arrayPonderado[7] +   //se ponderan los digitos para hacer el caluclo de digito verif.
                 arrayPonderado[6] +
                 arrayPonderado[5] +
                 arrayPonderado[4] +
                 arrayPonderado[3] +
                 arrayPonderado[2] +
-                (arrayRutSinDigito[1] * 2) +
-                (arrayRutSinDigito[0] * 3);
+                (arrayRutSinDigito[1] * 2); 
+              //  (arrayRutSinDigito[0] * 3);
 
 
                 sumaParcialModulo = sumaPonderada / 11; 
@@ -77,7 +77,7 @@ namespace CreadorRut
 
 
                 Console.WriteLine(
-                      arrayRutSinDigito[0] +          //Impresión final de RUT
+                     // arrayRutSinDigito[0] +          //Impresión final de RUT
                       arrayRutSinDigito[1] + "." +
                       arrayRutSinDigito[2] +
                       arrayRutSinDigito[3] +
