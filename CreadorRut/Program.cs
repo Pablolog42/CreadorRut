@@ -11,7 +11,17 @@ namespace CreadorRut
         static void Main()
 
         {
-            while (true) {          //Que se generen 20 RUTs
+            int k;     //Variable auxiliar
+
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Ingrese la canitdad de RUTs a generar: ");
+            int j = int.Parse(Console.ReadLine());         // cantidad de RUTs a generar
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine();
+
+
+
+            for (k=j; k>0; k--) {          //Que se generen tantos RUT como el usuario quiera
 
                 int delay = 10;
 
@@ -24,6 +34,11 @@ namespace CreadorRut
                 int sumaParcialModulo2;
 
                 string verificador;
+
+                Console.WriteLine("---------------------------------------");
+                Console.WriteLine("RUT número " + (j-k+1) + " de " + j) ;
+
+
 
 
 
@@ -89,11 +104,8 @@ namespace CreadorRut
                       arrayRutSinDigito[6] +
                       arrayRutSinDigito[7] + "-" + verificador);
 
-              
 
-
-
-            }//este es el del for
+            }
         }
 
     }
