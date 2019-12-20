@@ -11,16 +11,19 @@ namespace CreadorRut
         static void Main()
 
         {
-            for (int i = 0; i < 20; i++) {          //Que se generen 20 RUTs
+            while (true) {          //Que se generen 20 RUTs
 
-                int delay = 30;
+                int delay = 10;
 
                 int[] arrayRutSinDigito = new int[8]; //array rut sin digito verif.
                 int[] arrayPonderado = new int[8];    // array ponderado
                 int digitoV;
                 int sumaPonderada;
+                int i;
                 float sumaParcialModulo;
                 int sumaParcialModulo2;
+
+                string verificador;
 
 
 
@@ -44,7 +47,7 @@ namespace CreadorRut
                 Thread.Sleep(delay);
                 arrayRutSinDigito[7] = rnd.Next(0, 9);
 
-
+                
 
                 for(i=2; i<=7; i++)   //pondera los valores de el arrayRut (sólo del 2 al 7)  y los asigna a valor ArrayPonderado
                 { arrayPonderado[i] = arrayRutSinDigito[i] * (9 - i); }
@@ -62,17 +65,17 @@ namespace CreadorRut
 
 
                 sumaParcialModulo = sumaPonderada / 11;
-
                 int sumaParcialModuloTuncado = (int)Decimal.Truncate((decimal)sumaParcialModulo); //Se le quita parte decimal a SumaParcialModulo
-
                 sumaParcialModuloTuncado *= 11; //Se multiplica sin decimal
 
                 sumaParcialModulo2 = sumaPonderada - sumaParcialModuloTuncado;
-
-
                 digitoV = 11 - sumaParcialModulo2;
 
-                if (digitoV == 11) { digitoV = 0; }
+
+                if (digitoV == 11) { digitoV = 0; verificador = "0"; }          //Caso especial 0 y K
+                else if (digitoV == 10){ verificador = "K"; }
+                else {verificador = Convert.ToString(digitoV); }            //Caso normal
+                
 
 
 
@@ -84,9 +87,9 @@ namespace CreadorRut
                       arrayRutSinDigito[4] + "." +
                       arrayRutSinDigito[5] +
                       arrayRutSinDigito[6] +
-                      arrayRutSinDigito[7] + "-" + digitoV);
+                      arrayRutSinDigito[7] + "-" + verificador);
 
-                Console.ReadKey();
+              
 
 
 
