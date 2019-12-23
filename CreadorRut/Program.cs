@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Threading;
 
 namespace CreadorRut
@@ -11,6 +12,11 @@ namespace CreadorRut
         static void Main()
 
         {
+
+            WebClient client = new WebClient();
+            String no = client.DownloadString("http://www.ismycomputeronfire.com/");
+
+
             int k;     //Variable auxiliar para for loop
 
             Console.WriteLine("---------------------------------------");
@@ -38,7 +44,7 @@ namespace CreadorRut
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine("RUT número " + (j-k+1) + " de " + j) ;
 
-
+                Console.WriteLine(no);
 
 
 
