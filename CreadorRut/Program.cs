@@ -11,7 +11,7 @@ namespace CreadorRut
         static void Main()
 
         {
-            int k;     //Variable auxiliar
+            int k;     //Variable auxiliar para for loop
 
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("Ingrese la canitdad de RUTs a generar: ");
@@ -87,7 +87,7 @@ namespace CreadorRut
                 digitoV = 11 - sumaParcialModulo2;
 
 
-                if (digitoV == 11) { digitoV = 0; verificador = "0"; }          //Caso especial 0 y K
+                if (digitoV == 11) { verificador = "0"; }          //Caso especial 0 y K
                 else if (digitoV == 10){ verificador = "K"; }
                 else {verificador = Convert.ToString(digitoV); }            //Caso normal
                 
@@ -106,6 +106,11 @@ namespace CreadorRut
 
 
             }
+
+            Main();         //Para seguir ejecutando el código una vez terminado
+
+
+
         }
 
     }
