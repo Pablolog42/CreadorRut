@@ -106,6 +106,8 @@ namespace CreadorRut
 
 
             }
+
+            Console.ReadKey();
         }
 
     }

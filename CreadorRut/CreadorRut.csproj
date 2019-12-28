@@ -12,14 +12,8 @@
     <PackageIcon>Araucaria.ico</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>Primera versión funcional.</PackageReleaseNotes>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\..\Desktop\Araucaria.ico">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
